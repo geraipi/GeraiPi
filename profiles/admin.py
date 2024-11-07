@@ -169,7 +169,7 @@ class UserWithdrawlRequestAdmin(admin.ModelAdmin):
                 UserWithdrawlTransaction.objects.create(
                     user=request.user, jumlah=modelresponse.jumlah
                 )
-                userprofile = request.user
+                userprofile = modelresponse.user
                 float_coin = float(userprofile.coin)
                 float_jumlah = float(modelresponse.jumlah)
                 userprofile.coin = float_coin - float_jumlah
